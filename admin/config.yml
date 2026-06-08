@@ -15,7 +15,7 @@ collections:
     summary: "{{title}} — {{date}}"
     fields:
       - { label: Title, name: title, widget: string, hint: "e.g. Notice of 2027 Annual General Meeting" }
-      - { label: Date, name: date, widget: datetime, format: "MMMM YYYY", date_format: "MMMM YYYY", time_format: false }
+      - { label: Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
       - { label: Type, name: type, widget: select, options: ["AGM", "Accounts", "Notice", "News"], default: "News" }
       - { label: Summary, name: summary, widget: string, hint: "One line shown under the title on the news page" }
       - { label: Link (optional), name: link, widget: string, required: false, hint: "URL of a PDF or page this item links to — leave blank for news-only items" }
