@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The share offer — Baldons &amp; Nuneham Community Society</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<div class="band">
+  <div class="wrap topnav">
+    <a class="mark" href="index.html"><span class="m1">Baldons &amp; Nuneham</span><span class="m2">Community Society</span></a>
+    <nav>
+      <a href="news.html">Latest news</a>
+      <a href="story.html">Our story</a>
+      <a href="committee.html">Committee</a>
+      <a href="shares.html" class="active">Shares</a>
+      <a href="documents.html">Documents</a>
+      <a href="buying-your-pub.html">Buying your pub</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="hamburger" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</div>
+
+<div class="pagehead">
+  <div class="wrap inner">
+    <div class="eyebrow">Community ownership</div>
+    <h1 class="serif">A share in your local</h1>
+    <p>The Seven Stars belongs to the community because people bought shares in it. Here's how that works.</p>
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <div class="lede">
+      <p>The Baldons &amp; Nuneham Community Society is a <strong>community benefit society</strong> — a democratic, not-for-private-profit organisation that exists to benefit the community rather than its individual members. The pub is owned collectively by its shareholders.</p>
+      <p>Owning a share means owning a piece of the Seven Stars and having a genuine say in its future. Each shareholder has <strong>one vote</strong>, regardless of how many shares they hold, and can stand for and vote on the Management Committee at the AGM. Shares are about stewardship and community, not financial return.</p>
+    </div>
+
+    <h3 class="sub serif">How it works</h3>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="doc"><div class="serif" style="font-size:22px;">One member, one vote</div><div class="sub2" style="margin-top:6px;">Every shareholder has an equal say, however many shares they hold.</div></div>
+      <div class="doc"><div class="serif" style="font-size:22px;">Community benefit</div><div class="sub2" style="margin-top:6px;">Any surplus is reinvested in the pub and the community, not paid out as private profit.</div></div>
+      <div class="doc"><div class="serif" style="font-size:22px;">A lasting asset</div><div class="sub2" style="margin-top:6px;">Your share helps keep the Seven Stars open and at the heart of the village.</div></div>
+    </div>
+
+    <h3 class="sub serif">Find out more</h3>
+    <div class="lede">
+      <p>Read the current share offer, or get in touch and we'll be glad to explain how to get involved.</p>
+      <p style="display:flex;gap:14px;flex-wrap:wrap;margin-top:6px;">
+        <a class="btn btn-green" href="document-library/BNCS-Open-Share-Offer-2026.pdf">Read the share offer <span class="arr" style="border-color:rgba(255,255,255,.6);">›</span></a>
+        <a class="btn" style="background:#fff;color:var(--green2);border:1px solid var(--line);" href="mailto:info@bncsltd.com">Email info@bncsltd.com</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="fname serif">Baldons &amp; Nuneham Community Society</div>
+        <div style="font-size:14px;">Registered office: 8A The Green,<br>Marsh Baldon, Oxford OX44 9LW</div>
+      </div>
+      <div>
+        <div class="fh">The Society</div>
+        <a href="story.html" style="display:block;margin-bottom:6px;">Our story</a>
+        <a href="committee.html" style="display:block;margin-bottom:6px;">Meet the committee</a>
+        <a href="shares.html" style="display:block;margin-bottom:6px;">The share offer</a>
+        <a href="buying-your-pub.html" style="display:block;margin-bottom:6px;">Buying your pub</a>
+        <a href="documents.html">Documents</a>
+      </div>
+      <div>
+        <div class="fh">Pub &amp; village</div>
+        <a href="http://sevenstarsatmarshbaldon.co.uk/" style="display:block;margin-bottom:6px;">The Seven Stars pub ↗</a>
+        <a href="https://baldonspc.org/" style="display:block;margin-bottom:6px;">Baldons Parish Council ↗</a>
+        <a href="mailto:info@bncsltd.com">info@bncsltd.com</a>
+      </div>
+    </div>
+    <div class="legal">Baldons &amp; Nuneham Community Society Ltd · Registered society no. IP031919 (England &amp; Wales) · A community benefit society · Concept design, June 2026</div>
+  </div>
+</footer>
+
+<script>
+var isMobile=window.innerWidth<=820;
+document.querySelectorAll('a[href$=".pdf"]').forEach(function(a){
+  if(!isMobile){a.setAttribute('target','_blank');}
+});
+var btn=document.getElementById('menuBtn');
+var nav=document.querySelector('.topnav nav');
+btn.addEventListener('click',function(){
+  nav.classList.toggle('open');
+  btn.classList.toggle('open');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: document-library
+public_folder: /document-library
+
+collections:
+  - name: news
+    label: News & Announcements
+    label_singular: News item
+    folder: _news
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{date}}"
+    fields:
+      - { label: Title, name: title, widget: string, hint: "e.g. Notice of 2027 Annual General Meeting" }
+      - { label: Date, name: date, widget: datetime, format: "MMMM YYYY", date_format: "MMMM YYYY", time_format: false }
+      - { label: Type, name: type, widget: select, options: ["AGM", "Accounts", "Notice", "News"], default: "News" }
+      - { label: Summary, name: summary, widget: string, hint: "One line shown under the title on the news page" }
+      - { label: Link (optional), name: link, widget: string, required: false, hint: "URL of a PDF or page this item links to — leave blank for news-only items" }
+      - { label: Featured, name: featured, widget: boolean, default: false, hint: "Show as the large card at the top of the news page" }
+
+  - name: documents
+    label: Document Library
+    files:
+      - label: AGM Documents by Year
+        name: agm_documents
+        file: _data/documents.json
+        fields:
+          - label: Years
+            name: years
+            widget: list
+            summary: "{{fields.year}}"
+            fields:
+              - { label: Year, name: year, widget: string, hint: "e.g. 2026" }
+              - { label: Committee Report PDF, name: report, widget: file, required: false }
+              - { label: Accounts PDF, name: accounts, widget: file, required: false }
+              - { label: AGM Notice PDF, name: notice, widget: file, required: false }
+              - { label: AGM Minutes PDF, name: minutes, widget: file, required: false }

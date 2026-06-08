@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Latest news — Baldons &amp; Nuneham Community Society</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<div class="band">
+  <div class="wrap topnav">
+    <a class="mark" href="index.html"><span class="m1">Baldons &amp; Nuneham</span><span class="m2">Community Society</span></a>
+    <nav>
+      <a href="news.html" class="active">Latest news</a>
+      <a href="story.html">Our story</a>
+      <a href="committee.html">Committee</a>
+      <a href="shares.html">Shares</a>
+      <a href="documents.html">Documents</a>
+      <a href="buying-your-pub.html">Buying your pub</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="hamburger" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</div>
+
+<div class="pagehead">
+  <div class="wrap inner">
+    <div class="eyebrow">News &amp; notices</div>
+    <h1 class="serif">Latest news</h1>
+    <p>Society announcements, AGM papers and notices for shareholders.</p>
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <div id="news-featured"></div>
+    <h3 class="sub serif">Recent notices</h3>
+    <div class="doclist" id="news-list"></div>
+    <div class="lede" style="margin-top:24px;">
+      <p>Looking for earlier notices, accounts or AGM papers? They're all in the <a class="dl" href="documents.html">documents archive</a>, going back to 2015.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="fname serif">Baldons &amp; Nuneham Community Society</div>
+        <div style="font-size:14px;">Registered office: 8A The Green,<br>Marsh Baldon, Oxford OX44 9LW</div>
+      </div>
+      <div>
+        <div class="fh">The Society</div>
+        <a href="story.html" style="display:block;margin-bottom:6px;">Our story</a>
+        <a href="committee.html" style="display:block;margin-bottom:6px;">Meet the committee</a>
+        <a href="shares.html" style="display:block;margin-bottom:6px;">The share offer</a>
+        <a href="buying-your-pub.html" style="display:block;margin-bottom:6px;">Buying your pub</a>
+        <a href="documents.html">Documents</a>
+      </div>
+      <div>
+        <div class="fh">Pub &amp; village</div>
+        <a href="http://sevenstarsatmarshbaldon.co.uk/" style="display:block;margin-bottom:6px;">The Seven Stars pub ↗</a>
+        <a href="https://baldonspc.org/" style="display:block;margin-bottom:6px;">Baldons Parish Council ↗</a>
+        <a href="mailto:info@bncsltd.com">info@bncsltd.com</a>
+      </div>
+    </div>
+    <div class="legal">Baldons &amp; Nuneham Community Society Ltd · Registered society no. IP031919 (England &amp; Wales) · A community benefit society · Concept design, June 2026</div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/marked@9/marked.min.js"></script>
+<script>
+// Parse front-matter from markdown files
+function parseFrontMatter(text) {
+  var match = text.match(/^---\n([\s\S]*?)\n---/);
+  if (!match) return { body: text, meta: {} };
+  var meta = {};
+  match[1].split('\n').forEach(function(line) {
+    var kv = line.match(/^(\w+):\s*(.*)$/);
+    if (kv) {
+      var val = kv[2].trim().replace(/^["']|["']$/g, '');
+      meta[kv[1]] = val === 'true' ? true : val === 'false' ? false : val;
+    }
+  });
+  return { meta: meta, body: text.replace(/^---[\s\S]*?---\n/, '') };
+}
+
+// News files — add new filenames here when you publish a new item via the CMS
+var newsFiles = [
+  '_news/2026-06-01-accounts-2025-26-published.md',
+  '_news/2026-05-19-agm-notice-2026.md',
+  '_news/2025-07-01-report-accounts-2024-25.md'
+];
+
+var isMobile = window.innerWidth <= 820;
+
+Promise.all(newsFiles.map(function(f) {
+  return fetch(f).then(function(r) { return r.ok ? r.text() : null; }).catch(function() { return null; });
+})).then(function(results) {
+  var items = results
+    .map(function(text) { return text ? parseFrontMatter(text).meta : null; })
+    .filter(Boolean);
+
+  var featured = items.filter(function(i) { return i.featured; });
+  var rest = items.filter(function(i) { return !i.featured; });
+
+  // Featured item
+  var fEl = document.getElementById('news-featured');
+  if (featured.length) {
+    var f = featured[0];
+    var href = f.link || 'documents.html';
+    fEl.innerHTML =
+      '<a class="doc featured" href="' + href + '"' + (!isMobile && href.endsWith('.pdf') ? ' target="_blank"' : '') + '>' +
+      '<div>' +
+      '<span class="pill">' + (f.type || 'News') + '</span>' +
+      '<div class="serif" style="font-size:28px;margin-top:8px;">' + f.title + '</div>' +
+      '<div class="sub2" style="margin:2px 0 0;">' + (f.summary || '') + '</div>' +
+      '</div>' +
+      '<span class="dl">&#11015; Download notice</span>' +
+      '</a>';
+  }
+
+  // List items
+  var listEl = document.getElementById('news-list');
+  listEl.innerHTML = rest.map(function(item) {
+    var href = item.link || 'documents.html';
+    var ext = href.endsWith('.pdf') ? 'PDF' : (item.type || 'News');
+    return '<a class="docrow" href="' + href + '"' + (!isMobile && href.endsWith('.pdf') ? ' target="_blank"' : '') + '>' +
+      '<div><div class="t">' + item.title + '</div><div class="meta">' + (item.date || '') + (item.summary ? ' · ' + item.summary : '') + '</div></div>' +
+      '<span class="ext">' + ext + '</span>' +
+      '</a>';
+  }).join('');
+});
+
+var btn = document.getElementById('menuBtn');
+var nav = document.querySelector('.topnav nav');
+btn.addEventListener('click', function() {
+  nav.classList.toggle('open');
+  btn.classList.toggle('open');
+});
+</script>
+</body>
+</html>

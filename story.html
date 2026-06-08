@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our story — Baldons &amp; Nuneham Community Society</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<div class="band">
+  <div class="wrap topnav">
+    <a class="mark" href="index.html"><span class="m1">Baldons &amp; Nuneham</span><span class="m2">Community Society</span></a>
+    <nav>
+      <a href="news.html">Latest news</a>
+      <a href="story.html" class="active">Our story</a>
+      <a href="committee.html">Committee</a>
+      <a href="shares.html">Shares</a>
+      <a href="documents.html">Documents</a>
+      <a href="buying-your-pub.html">Buying your pub</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="hamburger" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</div>
+
+<div class="pagehead">
+  <div class="wrap inner">
+    <div class="eyebrow">Our story</div>
+    <h1 class="serif">Saving the Stars</h1>
+    <p>How a village came together to buy its pub — and has kept it thriving ever since.</p>
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <div class="lede">
+      <p>The Seven Stars has stood at the heart of Marsh Baldon for generations. When it faced closure, the villagers of the Baldons and Nuneham Courtenay — and friends from further afield — refused to lose it. Proving that the pub really is the hub of the community, they came together to buy it.</p>
+      <p>In 2012 they formed <strong>The Baldons &amp; Nuneham Community Society</strong>, a community benefit society registered with the Financial Conduct Authority. A community share offer followed, and 167 founding shareholders raised the funds to purchase the pub. The Seven Stars reopened on <strong>30 March 2013</strong> and has been thriving ever since.</p>
+      <p>With a new, converted Dining Barn and a full calendar of events, the Seven Stars looks set to be at the heart of our community for many years to come. The Society owns the building and looks after it for the long term; the pub itself is run day-to-day by our tenants. Our job is stewardship — keeping the Seven Stars open, welcoming and central to village life.</p>
+    </div>
+
+    <h3 class="sub serif">How it happened</h3>
+    <div class="timeline" style="margin-top:18px;">
+      <div class="tl"><div class="yr serif">2012</div><div class="tx">The community society is formed and registered; the campaign to buy the pub begins.</div></div>
+      <div class="tl"><div class="yr serif">2013</div><div class="tx">167 shareholders raise the funds. The Seven Stars reopens on 30 March 2013.</div></div>
+      <div class="tl"><div class="yr serif">2015</div><div class="tx">First full years of community ownership; the pub establishes itself as a village fixture.</div></div>
+      <div class="tl"><div class="yr serif">2021 &amp; 2023</div><div class="tx">Changes of tenant managed by the committee, keeping the pub in good hands.</div></div>
+      <div class="tl"><div class="yr serif">Today</div><div class="tx">A converted Dining Barn, a thriving events programme, and a financially healthy society stewarding the building for the future.</div></div>
+    </div>
+
+    <h3 class="sub serif">Thinking of doing the same?</h3>
+    <div class="lede">
+      <p>For other communities looking to buy their local, we wish you every success — it is doable with energy and enthusiasm. We have gathered the documents and materials from our own campaign to help you on your way.</p>
+      <p><a class="btn btn-green" href="buying-your-pub.html" style="margin-top:6px;">See the Buying your pub pack <span class="arr" style="border-color:rgba(255,255,255,.6);">›</span></a></p>
+    </div>
+  </div>
+</section>
+
+<div class="pubstrip">
+  <div class="wrap">
+    <div class="t">Looking for <b>menus, events or to book a table</b>? That's all on the pub's own website.</div>
+    <a class="btn btn-light" href="http://sevenstarsatmarshbaldon.co.uk/">Visit the Seven Stars ↗</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="fname serif">Baldons &amp; Nuneham Community Society</div>
+        <div style="font-size:14px;">Registered office: 8A The Green,<br>Marsh Baldon, Oxford OX44 9LW</div>
+      </div>
+      <div>
+        <div class="fh">The Society</div>
+        <a href="story.html" style="display:block;margin-bottom:6px;">Our story</a>
+        <a href="committee.html" style="display:block;margin-bottom:6px;">Meet the committee</a>
+        <a href="shares.html" style="display:block;margin-bottom:6px;">The share offer</a>
+        <a href="buying-your-pub.html" style="display:block;margin-bottom:6px;">Buying your pub</a>
+        <a href="documents.html">Documents</a>
+      </div>
+      <div>
+        <div class="fh">Pub &amp; village</div>
+        <a href="http://sevenstarsatmarshbaldon.co.uk/" style="display:block;margin-bottom:6px;">The Seven Stars pub ↗</a>
+        <a href="https://baldonspc.org/" style="display:block;margin-bottom:6px;">Baldons Parish Council ↗</a>
+        <a href="mailto:info@bncsltd.com">info@bncsltd.com</a>
+      </div>
+    </div>
+    <div class="legal">Baldons &amp; Nuneham Community Society Ltd · Registered society no. IP031919 (England &amp; Wales) · A community benefit society · Concept design, June 2026</div>
+  </div>
+</footer>
+
+<script>
+var isMobile=window.innerWidth<=820;
+document.querySelectorAll('a[href$=".pdf"]').forEach(function(a){
+  if(!isMobile){a.setAttribute('target','_blank');}
+});
+var btn=document.getElementById('menuBtn');
+var nav=document.querySelector('.topnav nav');
+btn.addEventListener('click',function(){
+  nav.classList.toggle('open');
+  btn.classList.toggle('open');
+});
+</script>
+</body>
+</html>

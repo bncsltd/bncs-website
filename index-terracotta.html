@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baldons &amp; Nuneham Community Society — the Seven Stars (terracotta)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1714; --paper:#f4ecdd; --card:#fffdf8; --line:#e3d8c2;
+    --brand:#2a211b; --accent:#bf4e2e; --accent-dk:#8f3a20; --muted:#6b6256;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;}
+  .serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;}
+  a{color:inherit;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 30px;}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border-radius:999px;font-size:14px;font-weight:500;text-decoration:none;}
+  .btn .arr{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;border:1px solid currentColor;font-size:12px;}
+  .mark{display:flex;flex-direction:column;line-height:1;}
+  .mark .m1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px;color:#fff;}
+  .mark .m2{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#d8cdbb;margin-top:5px;}
+  .band{background:var(--brand);}
+  .topnav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;}
+  .topnav nav a{color:#ece4d8;text-decoration:none;font-size:13px;letter-spacing:.04em;margin-left:26px;text-transform:uppercase;opacity:.85;}
+  .topnav nav a:hover{opacity:1;}
+  .hero{position:relative;margin:0 30px;border-radius:18px;overflow:hidden;}
+  .hero .bg{position:absolute;inset:0;background:url('assets/hero-pub.jpg') center/cover no-repeat;}
+  .hero .veil{position:absolute;inset:0;background:linear-gradient(90deg, rgba(28,23,20,.93) 0%, rgba(28,23,20,.8) 38%, rgba(28,23,20,.3) 75%, rgba(28,23,20,.16) 100%);}
+  .hero .inner{position:relative;padding:96px 56px 104px;max-width:620px;}
+  .eyebrow{color:#d9663f;font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:20px;}
+  .hero h1{font-size:68px;line-height:.98;color:#fff;margin:0 0 18px;}
+  .hero h1 .em{color:#e0764d;font-style:italic;}
+  .hero p{color:#e4dccf;font-size:18px;max-width:440px;margin:0 0 30px;}
+  .hero .ctas{display:flex;gap:14px;flex-wrap:wrap;}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin:64px 30px 0;border-radius:14px;overflow:hidden;}
+  .stat{background:var(--card);padding:30px 18px;text-align:center;}
+  .stat .n{font-size:46px;color:var(--accent);line-height:1;}
+  .stat .l{font-size:13px;color:var(--muted);margin-top:8px;letter-spacing:.02em;}
+  section.block{padding:72px 0;}
+  h2.head{font-size:40px;margin:0 0 18px;}
+  .lede{max-width:680px;font-size:17px;color:#473c33;}
+  .lede p{margin:0 0 16px;}
+  .docs-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:24px;}
+  .docs-head span{color:var(--muted);font-size:14px;}
+  .doc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;text-decoration:none;color:var(--ink);display:block;transition:border-color .15s,transform .15s;}
+  .doc:hover{border-color:var(--accent);transform:translateY(-2px);}
+  .doc.featured{border:2px solid var(--accent);display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+  .pill{background:#f6e2d8;color:var(--accent-dk);font-size:12px;font-weight:500;padding:4px 12px;border-radius:999px;}
+  .dl{color:var(--accent-dk);font-size:14px;font-weight:500;text-decoration:none;}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .doc .yr{font-size:26px;}
+  .doc .sub{font-size:13px;color:var(--muted);margin:6px 0 12px;}
+  .shares{background:#ece3d2;text-align:center;}
+  .shares .lede{margin:0 auto 26px;}
+  .pubstrip{background:var(--brand);color:#ece4d8;}
+  .pubstrip .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:26px 30px;flex-wrap:wrap;}
+  .pubstrip .t{font-size:17px;}
+  .pubstrip .t b{font-weight:500;color:#fff;}
+  footer{background:var(--ink);color:#cdbfb0;padding:50px 0 36px;}
+  .fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+  footer .fh{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#d9663f;margin-bottom:12px;}
+  footer a{color:#cdbfb0;text-decoration:none;font-size:14px;}
+  footer a:hover{color:#fff;}
+  .fname{font-size:22px;color:#fff;margin-bottom:10px;}
+  .legal{border-top:1px solid #3a2c22;margin-top:34px;padding-top:18px;font-size:13px;color:#8c7d6e;}
+  @media(max-width:780px){
+    .hero{margin:0 14px;} .hero .inner{padding:60px 28px 64px;} .hero h1{font-size:44px;}
+    .hero .veil{background:linear-gradient(180deg, rgba(28,23,20,.82), rgba(28,23,20,.9));}
+    .stats{grid-template-columns:1fr;margin:48px 14px 0;} .grid{grid-template-columns:repeat(2,1fr);}
+    .fgrid{grid-template-columns:1fr;} .topnav nav{display:none;} .doc.featured{flex-direction:column;align-items:flex-start;gap:14px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="band">
+  <div class="wrap topnav">
+    <div class="mark"><span class="m1">Baldons &amp; Nuneham</span><span class="m2">Community Society</span></div>
+    <nav><a href="#story">Our story</a><a href="#shares">Shares</a><a href="#docs">Documents</a><a href="#visit">Contact</a></nav>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="bg"></div>
+  <div class="veil"></div>
+  <div class="inner">
+    <div class="eyebrow">The community that owns its pub</div>
+    <h1 class="serif">The pub the village <span class="em">saved</span></h1>
+    <p>In 2013, 167 villagers came together to buy the Seven Stars. We are the community society that owns it — and keeps it at the heart of the Baldons.</p>
+    <div class="ctas">
+      <a class="btn" style="background:var(--accent);color:#fff;" href="#story">Our story <span class="arr">›</span></a>
+      <a class="btn" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);" href="#shares">Become a shareholder</a>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="n serif">167</div><div class="l">founding shareholders</div></div>
+  <div class="stat"><div class="n serif">2013</div><div class="l">reopened by the village</div></div>
+  <div class="stat"><div class="n serif">100%</div><div class="l">community-owned</div></div>
+</div>
+
+<section class="block" id="story">
+  <div class="wrap">
+    <h2 class="head serif">Saving the Stars</h2>
+    <div class="lede">
+      <p>When the Seven Stars faced closure, the villagers of the Baldons and Nuneham Courtenay refused to lose their pub. Together they formed the Baldons &amp; Nuneham Community Society, raised the funds, and bought it. The pub reopened on 30&nbsp;March&nbsp;2013 and has been thriving ever since.</p>
+      <p>The Society owns the building and looks after it for the long term; the pub itself is run day-to-day by our tenants. Our job is stewardship — keeping the Seven Stars open, welcoming and at the centre of village life for generations to come.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block shares" id="shares">
+  <div class="wrap">
+    <h2 class="head serif">A share in your local</h2>
+    <div class="lede">Owning a share means owning a piece of the Seven Stars — and having a say in its future. Find out how community ownership works and how to get involved.</div>
+    <a class="btn" style="background:var(--accent);color:#fff;" href="https://bncsltd.com/pages/open-shares-offer/">The share offer <span class="arr" style="border-color:rgba(255,255,255,.6);">›</span></a>
+  </div>
+</section>
+
+<section class="block" id="docs" style="padding-top:64px;">
+  <div class="wrap">
+    <div class="docs-head"><h2 class="head serif" style="margin:0;">Key documents</h2><span>AGM notices &amp; annual accounts</span></div>
+
+    <a class="doc featured" href="https://bncsltd.com/wp-content/uploads/2026/05/BNCS-AGM-Notice-2026.pdf">
+      <div>
+        <span class="pill">Latest</span>
+        <div class="serif" style="font-size:28px;margin-top:8px;">2026 Annual General Meeting</div>
+        <div class="sub" style="margin:2px 0 0;">Tuesday 30 June 2026, 7pm · Seven Stars</div>
+      </div>
+      <span class="dl">⬇ Download notice</span>
+    </a>
+
+    <div class="grid">
+      <div class="doc"><div class="yr serif">2025</div><div class="sub">Report &amp; accounts</div><a class="dl" href="https://bncsltd.com/wp-content/uploads/2025/07/Committee-Report-2025-for-AGM-Final.pdf">Report</a> · <a class="dl" href="https://bncsltd.com/wp-content/uploads/2025/07/BNCS-accounts-202425-for-AGM.pdf">Accounts</a></div>
+      <div class="doc"><div class="yr serif">2024</div><div class="sub">Report &amp; accounts</div><a class="dl" href="https://bncsltd.com/documents-for-2024-agm/">View →</a></div>
+      <div class="doc"><div class="yr serif">2023</div><div class="sub">Report &amp; accounts</div><a class="dl" href="https://bncsltd.com/documents-for-2023-agm/">View →</a></div>
+      <div class="doc"><div class="yr serif">2022</div><div class="sub">Report &amp; accounts</div><a class="dl" href="https://bncsltd.com/pages/documents-for-the-bncs-ltd-2022-agm/">View →</a></div>
+    </div>
+    <div style="text-align:center;margin-top:20px;color:var(--muted);font-size:14px;">Full archive 2015–2021 in the documents library</div>
+  </div>
+</section>
+
+<div class="pubstrip">
+  <div class="wrap">
+    <div class="t">Looking for <b>menus, events or to book a table</b>? That's all on the pub's own website.</div>
+    <a class="btn" style="background:#fff;color:var(--accent-dk);" href="http://sevenstarsatmarshbaldon.co.uk/">Visit the Seven Stars ↗</a>
+  </div>
+</div>
+
+<footer id="visit">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="fname serif">Baldons &amp; Nuneham Community Society</div>
+        <div style="font-size:14px;">The Seven Stars, The Green,<br>Marsh Baldon, Oxfordshire OX44 9LP</div>
+      </div>
+      <div>
+        <div class="fh">The Society</div>
+        <a href="#" style="display:block;margin-bottom:6px;">Contact the committee</a>
+        <a href="https://bncsltd.com/pages/open-shares-offer/" style="display:block;margin-bottom:6px;">The share offer</a>
+        <a href="#">Buying your own pub?</a>
+      </div>
+      <div>
+        <div class="fh">The pub</div>
+        <a href="http://sevenstarsatmarshbaldon.co.uk/">Menus, events &amp; booking ↗</a>
+      </div>
+    </div>
+    <div class="legal">Baldons &amp; Nuneham Community Society Ltd · A community benefit society · Concept design, June 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>

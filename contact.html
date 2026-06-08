@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Baldons &amp; Nuneham Community Society</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<div class="band">
+  <div class="wrap topnav">
+    <a class="mark" href="index.html"><span class="m1">Baldons &amp; Nuneham</span><span class="m2">Community Society</span></a>
+    <nav>
+      <a href="news.html">Latest news</a>
+      <a href="story.html">Our story</a>
+      <a href="committee.html">Committee</a>
+      <a href="shares.html">Shares</a>
+      <a href="documents.html">Documents</a>
+      <a href="buying-your-pub.html">Buying your pub</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <button class="hamburger" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</div>
+
+<div class="pagehead">
+  <div class="wrap inner">
+    <div class="eyebrow">Get in touch</div>
+    <h1 class="serif">Contact us</h1>
+    <p>Questions about shares, the Society, the AGM, or saving your own pub? We'd love to hear from you.</p>
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <div class="contactcard">
+      <div style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:8px;">Email the Society</div>
+      <a class="big" href="mailto:info@bncsltd.com">info@bncsltd.com</a>
+      <p style="margin:16px 0 0;color:#3c443b;">All enquiries come to the committee through this address and we'll make sure they reach the right person.</p>
+      <div style="border-top:1px solid var(--line);margin-top:22px;padding-top:18px;">
+        <div style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:8px;">Registered office</div>
+        <div style="color:#3c443b;">Baldons &amp; Nuneham Community Society Ltd<br>8A The Green, Marsh Baldon, Oxford OX44 9LW<br>Registered society no. IP031919 (England &amp; Wales)</div>
+      </div>
+    </div>
+
+    <div class="lede" style="margin-top:34px;">
+      <p>For anything to do with the pub itself — menus, events, opening hours or to book a table — please visit the <a class="dl" href="http://sevenstarsatmarshbaldon.co.uk/" target="_blank" rel="noopener">Seven Stars website</a>. For wider village matters, see <a class="dl" href="https://baldonspc.org/" target="_blank" rel="noopener">Baldons Parish Council</a>.</p>
+    </div>
+  </div>
+</section>
+
+<div class="pubstrip">
+  <div class="wrap">
+    <div class="t">Looking for <b>menus, events or to book a table</b>? That's all on the pub's own website.</div>
+    <a class="btn btn-light" href="http://sevenstarsatmarshbaldon.co.uk/">Visit the Seven Stars ↗</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="fname serif">Baldons &amp; Nuneham Community Society</div>
+        <div style="font-size:14px;">Registered office: 8A The Green,<br>Marsh Baldon, Oxford OX44 9LW</div>
+      </div>
+      <div>
+        <div class="fh">The Society</div>
+        <a href="story.html" style="display:block;margin-bottom:6px;">Our story</a>
+        <a href="committee.html" style="display:block;margin-bottom:6px;">Meet the committee</a>
+        <a href="shares.html" style="display:block;margin-bottom:6px;">The share offer</a>
+        <a href="buying-your-pub.html" style="display:block;margin-bottom:6px;">Buying your pub</a>
+        <a href="documents.html">Documents</a>
+      </div>
+      <div>
+        <div class="fh">Pub &amp; village</div>
+        <a href="http://sevenstarsatmarshbaldon.co.uk/" style="display:block;margin-bottom:6px;">The Seven Stars pub ↗</a>
+        <a href="https://baldonspc.org/" style="display:block;margin-bottom:6px;">Baldons Parish Council ↗</a>
+        <a href="mailto:info@bncsltd.com">info@bncsltd.com</a>
+      </div>
+    </div>
+    <div class="legal">Baldons &amp; Nuneham Community Society Ltd · Registered society no. IP031919 (England &amp; Wales) · A community benefit society · Concept design, June 2026</div>
+  </div>
+</footer>
+
+<script>
+var isMobile=window.innerWidth<=820;
+document.querySelectorAll('a[href$=".pdf"]').forEach(function(a){
+  if(!isMobile){a.setAttribute('target','_blank');}
+});
+var btn=document.getElementById('menuBtn');
+var nav=document.querySelector('.topnav nav');
+btn.addEventListener('click',function(){
+  nav.classList.toggle('open');
+  btn.classList.toggle('open');
+});
+</script>
+</body>
+</html>
