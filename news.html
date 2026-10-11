@@ -88,6 +88,7 @@ function parseFrontMatter(text) {
 
 // News files — add new filenames here when you publish a new item via the CMS
 var newsFiles = [
+  '_news/2026-10-11-village-reunion-dinner-nov-2026.md',
   '_news/2026-07-09-agm-minutes-2026.md',
   '_news/2026-06-01-accounts-2025-26-published.md',
   '_news/2026-05-19-agm-notice-2026.md',
@@ -118,7 +119,7 @@ Promise.all(newsFiles.map(function(f) {
       '<div class="serif" style="font-size:28px;margin-top:8px;">' + f.title + '</div>' +
       '<div class="sub2" style="margin:2px 0 0;">' + (f.summary || '') + '</div>' +
       '</div>' +
-      '<span class="dl">&#11015; Download notice</span>' +
+      (href.endsWith('.pdf') ? '<span class="dl">&#11015; Download notice</span>' : '<span class="dl">Read more &rarr;</span>') +
       '</a>';
   }
 
